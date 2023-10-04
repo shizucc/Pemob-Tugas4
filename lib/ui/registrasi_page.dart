@@ -18,7 +18,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
   Widget _namaTextField() {
     return TextFormField(
       controller: _namaController,
-      decoration: InputDecoration(labelText: "Nama"),
+      decoration: const InputDecoration(labelText: "Nama"),
       keyboardType: TextInputType.text,
       validator: (value) {
         if (value!.length < 3) {
@@ -32,7 +32,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
   Widget _emailTextField() {
     return TextFormField(
       controller: _emailController,
-      decoration: InputDecoration(labelText: "Email"),
+      decoration: const InputDecoration(labelText: "Email"),
       keyboardType: TextInputType.emailAddress,
       validator: (value) {
         if (value!.isEmpty) {
@@ -47,7 +47,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
     return TextFormField(
       controller: _passwordController,
       obscureText: true,
-      decoration: InputDecoration(labelText: "Password"),
+      decoration: const InputDecoration(labelText: "Password"),
       keyboardType: TextInputType.text,
       validator: (value) {
         if (value!.isEmpty) {
@@ -60,7 +60,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
 
   Widget _passwordConfirmationTextField() {
     return TextFormField(
-      decoration: InputDecoration(labelText: "Konfirmasi Password"),
+      decoration: const InputDecoration(labelText: "Konfirmasi Password"),
       obscureText: true,
       keyboardType: TextInputType.text,
       validator: (value) {
@@ -77,14 +77,14 @@ class _RegistrationPageState extends State<RegistrationPage> {
         onPressed: () {
           var validate = _formKey.currentState!.validate();
         },
-        child: Text("Registrasi"));
+        child: const Text("Registrasi"));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Registration Page"),
+        title: const Text("Registration Page"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(15),
@@ -97,7 +97,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 _emailTextField(),
                 _passwordTextField(),
                 _passwordConfirmationTextField(),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Padding(
