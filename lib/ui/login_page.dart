@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:p3/ui/registrasi_page.dart';
+import 'package:p3/ui/widgets/name_appbar.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -56,6 +57,7 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Login"),
+        actions: [myName()],
       ),
       body: SafeArea(
         child: Padding(

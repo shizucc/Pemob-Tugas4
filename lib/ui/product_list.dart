@@ -17,6 +17,10 @@ class _ProductListState extends State<ProductList> {
       appBar: AppBar(
         title: Text("List Product"),
         actions: [
+          Padding(
+            padding: EdgeInsets.only(right: 15),
+            child: Text("Alfi"),
+          ),
           IconButton(
               onPressed: () async {
                 Navigator.push(context,

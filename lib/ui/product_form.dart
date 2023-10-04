@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:p3/model/product.dart';
+import 'package:p3/ui/widgets/name_appbar.dart';
 
 class ProductForm extends StatefulWidget {
   final Product? produk;
@@ -45,6 +46,7 @@ class _ProductFormState extends State<ProductForm> {
     return Scaffold(
       appBar: AppBar(
         title: Text(judul),
+        actions: [myName()],
       ),
       body: SingleChildScrollView(
         child: Padding(

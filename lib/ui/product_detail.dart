@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:p3/model/product.dart';
 import 'package:p3/ui/product_form.dart';
+import 'package:p3/ui/widgets/name_appbar.dart';
 
 class ProductDetail extends StatefulWidget {
   Product? produk;
@@ -16,7 +17,8 @@ class _ProductDetailState extends State<ProductDetail> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Detail Produk"),
+        title: const Text("Detail Produk"),
+        actions: [myName()],
       ),
       body: Center(
         child: Column(
