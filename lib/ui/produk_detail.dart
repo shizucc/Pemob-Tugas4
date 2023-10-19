@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:p3/model/product.dart';
-import 'package:p3/ui/product_form.dart';
+import 'package:p3/model/produk.dart';
+import 'package:p3/ui/produk_form.dart';
 import 'package:p3/ui/widgets/name_appbar.dart';
 
-class ProductDetail extends StatefulWidget {
-  Product? produk;
+class ProdukDetail extends StatefulWidget {
+  final Produk? produk;
 
-  ProductDetail({super.key, this.produk});
+  const ProdukDetail({super.key, required this.produk});
 
   @override
-  State<ProductDetail> createState() => _ProductDetailState();
+  State<ProdukDetail> createState() => _ProdukDetailState();
 }
 
-class _ProductDetailState extends State<ProductDetail> {
+class _ProdukDetailState extends State<ProdukDetail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,7 +53,7 @@ class _ProductDetailState extends State<ProductDetail> {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => ProductForm(
+                      builder: (context) => ProdukForm(
                             produk: widget.produk!,
                           )));
             }),

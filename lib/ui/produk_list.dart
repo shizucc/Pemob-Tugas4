@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:p3/model/product.dart';
-import 'package:p3/ui/product_detail.dart';
-import 'package:p3/ui/product_form.dart';
+import 'package:p3/model/produk.dart';
+import 'package:p3/ui/produk_detail.dart';
+import 'package:p3/ui/produk_form.dart';
 
-class ProductList extends StatefulWidget {
-  const ProductList({super.key});
+class produkList extends StatefulWidget {
+  const produkList({super.key});
 
   @override
-  State<ProductList> createState() => _ProductListState();
+  State<produkList> createState() => _produkListState();
 }
 
-class _ProductListState extends State<ProductList> {
+class _produkListState extends State<produkList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("List Product"),
+        title: Text("List produk"),
         actions: [
           Padding(
             padding: EdgeInsets.only(right: 15),
@@ -24,7 +24,7 @@ class _ProductListState extends State<ProductList> {
           IconButton(
               onPressed: () async {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ProductForm()));
+                    MaterialPageRoute(builder: (context) => ProdukForm()));
               },
               icon: Icon(Icons.add))
         ],
@@ -44,18 +44,18 @@ class _ProductListState extends State<ProductList> {
         padding: const EdgeInsets.all(15),
         child: ListView(
           children: [
-            ItemProduct(
-                product: Product(
+            ItemProduk(
+                produk: Produk(
                     kodeProduk: 'A001',
                     namaProduk: 'Kamera',
                     hargaProduk: 500000)),
-            ItemProduct(
-                product: Product(
+            ItemProduk(
+                produk: Produk(
                     kodeProduk: 'A002',
                     namaProduk: 'Kulkas',
                     hargaProduk: 500000)),
-            ItemProduct(
-                product: Product(
+            ItemProduk(
+                produk: Produk(
                     kodeProduk: 'A003',
                     namaProduk: 'Mesin Cuci',
                     hargaProduk: 500000)),
@@ -66,24 +66,24 @@ class _ProductListState extends State<ProductList> {
   }
 }
 
-class ItemProduct extends StatelessWidget {
-  final Product product;
-  const ItemProduct({super.key, required this.product});
+class ItemProduk extends StatelessWidget {
+  final Produk produk;
+  const ItemProduk({super.key, required this.produk});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       child: Card(
         child: ListTile(
-          title: Text(product.namaProduk!),
-          subtitle: Text(product.hargaProduk.toString()),
+          title: Text(produk.namaProduk!),
+          subtitle: Text(produk.hargaProduk.toString()),
         ),
       ),
       onTap: () {
         Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) => ProductDetail(produk: product)));
+                builder: (context) => ProdukDetail(produk: produk)));
       },
     );
   }

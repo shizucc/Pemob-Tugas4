@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:p3/model/product.dart';
+import 'package:p3/model/produk.dart';
 import 'package:p3/ui/widgets/name_appbar.dart';
 
-class ProductForm extends StatefulWidget {
-  final Product? produk;
-  const ProductForm({super.key, this.produk});
+class ProdukForm extends StatefulWidget {
+  final Produk? produk;
+  const ProdukForm({super.key, this.produk});
 
   @override
-  State<ProductForm> createState() => _ProductFormState();
+  State<ProdukForm> createState() => _ProdukFormState();
 }
 
-class _ProductFormState extends State<ProductForm> {
+class _ProdukFormState extends State<ProdukForm> {
   String judul = "Tambah Produk";
   String tombolSubmit = "Simpan";
   bool _isLoading = false;
