@@ -6,6 +6,7 @@ import 'app_exception.dart';
 class Api {
   Future<dynamic> post(dynamic url, dynamic data) async {
     var token = await UserInfo().getToken();
+    // print("ini method post");
     var responseJson;
     try {
       final response = await http.post(Uri.parse(url),

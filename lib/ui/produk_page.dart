@@ -3,14 +3,14 @@ import 'package:p3/model/produk.dart';
 import 'package:p3/ui/produk_detail.dart';
 import 'package:p3/ui/produk_form.dart';
 
-class produkList extends StatefulWidget {
-  const produkList({super.key});
+class ProdukPage extends StatefulWidget {
+  const ProdukPage({super.key});
 
   @override
-  State<produkList> createState() => _produkListState();
+  State<ProdukPage> createState() => _ProdukPageState();
 }
 
-class _produkListState extends State<produkList> {
+class _ProdukPageState extends State<ProdukPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
