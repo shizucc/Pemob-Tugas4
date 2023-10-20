@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:p3/model/produk.dart';
 import 'package:p3/ui/produk_form.dart';
-import 'package:p3/ui/widgets/name_appbar.dart';
 
 class ProdukDetail extends StatefulWidget {
-  final Produk? produk;
+  Produk? produk;
 
-  const ProdukDetail({super.key, required this.produk});
+  ProdukDetail({Key? key, this.produk}) : super(key: key);
 
   @override
-  State<ProdukDetail> createState() => _ProdukDetailState();
+  _ProdukDetailState createState() => _ProdukDetailState();
 }
 
 class _ProdukDetailState extends State<ProdukDetail> {
@@ -17,8 +16,7 @@ class _ProdukDetailState extends State<ProdukDetail> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Detail Produk"),
-        actions: [myName()],
+        title: const Text('Detail Produk'),
       ),
       body: Center(
         child: Column(
@@ -57,9 +55,6 @@ class _ProdukDetailState extends State<ProdukDetail> {
                             produk: widget.produk!,
                           )));
             }),
-        const SizedBox(
-          width: 10,
-        ),
         //Tombol Hapus
         OutlinedButton(
             child: const Text("DELETE"), onPressed: () => confirmHapus()),
@@ -74,7 +69,14 @@ class _ProdukDetailState extends State<ProdukDetail> {
         //tombol hapus
         OutlinedButton(
           child: const Text("Ya"),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => ProdukForm(
+                          produk: widget.produk!,
+                        )));
+          },
         ),
         //tombol batal
         OutlinedButton(
@@ -83,6 +85,7 @@ class _ProdukDetailState extends State<ProdukDetail> {
         )
       ],
     );
+
     showDialog(builder: (context) => alertDialog, context: context);
   }
 }
