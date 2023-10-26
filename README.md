@@ -5,10 +5,11 @@ Api dapat dilihat di [sini](https://github.com/shizucc/Pemob-Api-P4.git)
 ## Tampilan Aplikasi
 
 ### Halaman Login
-![Screenshot 2023-10-04 155314](https://github.com/shizucc/Pemob-Tugas4/assets/100017161/314f7019-0fd4-4df9-a162-dd1c7176b96f)
+![Screenshot 2023-10-26 112135](https://github.com/shizucc/Pemob-Tugas4/assets/100017161/b0fde042-3aab-4dd4-b0fe-49535626e608)
 
 ### Halaman Register
-![Screenshot 2023-10-04 155324](https://github.com/shizucc/Pemob-Tugas4/assets/100017161/c387b233-f2bf-496f-902f-9cd265631512)
+![Screenshot 2023-10-26 112142](https://github.com/shizucc/Pemob-Tugas4/assets/100017161/6f913db3-dde0-4dd9-b63e-3815f14ffd63)
+
 
 ## Halaman CRUD 
 #### List Produk
