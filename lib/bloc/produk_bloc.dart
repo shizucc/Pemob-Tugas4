@@ -14,6 +14,7 @@ class ProdukBloc {
     for (int i = 0; i < listProduk.length; i++) {
       produks.add(Produk.fromJson(listProduk[i]));
     }
+    // print(produks);
     return produks;
   }
 

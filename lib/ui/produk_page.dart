@@ -50,7 +50,9 @@ class _ProdukPageState extends State<ProdukPage> {
       body: FutureBuilder<List>(
         future: ProdukBloc.getProduks(),
         builder: (context, snapshot) {
+          // print(snapshot.data);
           if (snapshot.hasError) print(snapshot.error);
+          // print(snapshot.data);
           return snapshot.hasData
               ? ListProduk(
                   list: snapshot.data,
@@ -71,6 +73,7 @@ class ListProduk extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(list);
     return ListView.builder(
         itemCount: list == null ? 0 : list!.length,
         itemBuilder: (context, i) {

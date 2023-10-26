@@ -22,8 +22,9 @@ class Api {
   Future<dynamic> get(dynamic url) async {
     var token = await UserInfo().getToken();
     var responseJson;
+    print(url);
     try {
-      final response = await http.get(url,
+      final response = await http.get(Uri.parse(url),
           headers: {HttpHeaders.authorizationHeader: "Bearer $token"});
       responseJson = _returnResponse(response);
     } on SocketException {
