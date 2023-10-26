@@ -1,24 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:p3/model/product.dart';
-import 'package:p3/ui/product_form.dart';
-import 'package:p3/ui/widgets/name_appbar.dart';
+import 'package:p3/model/produk.dart';
+import 'package:p3/ui/produk_form.dart';
 
-class ProductDetail extends StatefulWidget {
-  Product? produk;
+class ProdukDetail extends StatefulWidget {
+  Produk? produk;
 
-  ProductDetail({super.key, this.produk});
+  ProdukDetail({Key? key, this.produk}) : super(key: key);
 
   @override
-  State<ProductDetail> createState() => _ProductDetailState();
+  _ProdukDetailState createState() => _ProdukDetailState();
 }
 
-class _ProductDetailState extends State<ProductDetail> {
+class _ProdukDetailState extends State<ProdukDetail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Detail Produk"),
-        actions: [myName()],
+        title: const Text('Detail Produk'),
       ),
       body: Center(
         child: Column(
@@ -53,13 +51,10 @@ class _ProductDetailState extends State<ProductDetail> {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => ProductForm(
+                      builder: (context) => ProdukForm(
                             produk: widget.produk!,
                           )));
             }),
-        const SizedBox(
-          width: 10,
-        ),
         //Tombol Hapus
         OutlinedButton(
             child: const Text("DELETE"), onPressed: () => confirmHapus()),
@@ -74,7 +69,14 @@ class _ProductDetailState extends State<ProductDetail> {
         //tombol hapus
         OutlinedButton(
           child: const Text("Ya"),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => ProdukForm(
+                          produk: widget.produk!,
+                        )));
+          },
         ),
         //tombol batal
         OutlinedButton(
@@ -83,6 +85,7 @@ class _ProductDetailState extends State<ProductDetail> {
         )
       ],
     );
+
     showDialog(builder: (context) => alertDialog, context: context);
   }
 }
